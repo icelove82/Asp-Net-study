@@ -1,7 +1,12 @@
+using Asp_Net_study.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Add custom service to the container.
+builder.Services.AddTransient<JsonFileProductService>();
 
 var app = builder.Build();
 
