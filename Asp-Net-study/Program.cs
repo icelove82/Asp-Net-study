@@ -5,7 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-// Add custom service to the container.
+// * Add custom api router
+builder.Services.AddControllers();
+
+// * Add custom service to the container.
 builder.Services.AddTransient<JsonFileProductService>();
 
 var app = builder.Build();
@@ -26,5 +29,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+// * Map customer api router
+app.MapControllers();
 
 app.Run();
