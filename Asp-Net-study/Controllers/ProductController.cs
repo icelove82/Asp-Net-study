@@ -21,5 +21,16 @@ namespace Asp_Net_study.Controllers
         {
             return ProductService.GetProducts();
         }
+
+        // [HttpPatch] "[FromBody]"
+        [Route("rate")]
+        [HttpGet]
+        public ActionResult Get(
+            [FromQuery] string productId, 
+            [FromQuery] int rating)
+        {
+            ProductService.AddRating(productId, rating);
+            return Ok();
+        }
     }
 }
