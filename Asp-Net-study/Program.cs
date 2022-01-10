@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-// * Add custom component ? Seems no need in ASP.Net 6 ?
-//builder.Services.AddServerSideBlazor();
+// * Add custom component
+builder.Services.AddServerSideBlazor();
 
 // * Add custom api router
 builder.Services.AddControllers();
@@ -36,7 +36,7 @@ app.MapRazorPages();
 // * Map customer api router
 app.MapControllers();
 
-// * Map customer component ? Seems no need in ASP.Net 6 ?
-//app.MapBlazorHub();
+// * Map customer component
+app.MapBlazorHub();
 
 app.Run();
